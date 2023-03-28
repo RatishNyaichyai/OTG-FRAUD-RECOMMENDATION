@@ -5,6 +5,7 @@ import CalanderDropdownMenu from "../../CalanderDropdownMenu";
 import LocationDropdownMenu from "../../LocationDropdownMenu";
 import SearchBar from "../../SearchBar";
 import "../../styles/Index.css";
+import FraudTable from "../../FraudTable";
 
 const Location = [
   { value: "ALL", label: "ALL" },
@@ -53,6 +54,7 @@ const FraudTransaction = () => {
             onSelection={onSelection}
           />
         </div>
+        <FraudTable />
       </div>
     </div>
   );
