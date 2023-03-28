@@ -1,0 +1,58 @@
+:root {
+  --color-border: #cccccc;
+  --color-bg: #ffffff;
+  --color-hover: #a7a5a5;
+  --shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+}
+
+.dropdown-menu {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  border: 2px solid #989898;
+  color: #666666;
+  border-radius: 4px;
+  padding: 0px 10px;
+}
+
+.dropdown-menu__header {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.dropdown-menu__selected-option {
+  padding: 0.5rem;
+  border-radius: 0.25rem;
+  background-color: var(--color-bg);
+}
+
+.dropdown-menu__arrow {
+  margin-left: 0.5rem;
+  font-size: 0.8rem;
+}
+
+.dropdown-menu__options {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  max-height: 200px;
+  overflow-y: auto;
+  border: 1px solid var(--color-border);
+  background-color: var(--color-bg);
+  z-index: 1;
+}
+
+.dropdown-menu__option {
+  padding: 0.5rem;
+  cursor: pointer;
+}
+
+.dropdown-menu__option:hover {
+  background-color: var(--color-hover);
+}
+
+.calender-icon {
+  margin-right: 10px;
+}
