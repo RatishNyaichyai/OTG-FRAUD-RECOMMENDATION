@@ -1,5 +1,27 @@
-nav {
+.nav {
+  position: fixed;
+  width: 100%;
+
   display: flex;
   justify-content: space-between;
-  margin: 10px;
+
+  padding: 10px;
+
+  background-color: #635858;
+  color: white;
+
+  z-index: 1;
+}
+
+.avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.user-container {
+  width: 15rem;
+  padding: 5px;
+  background-color: rgb(29, 29, 29);
+  border-radius: 50px;
 }

@@ -3,9 +3,10 @@ import Navbar from "../../Navbar";
 import Header from "../../Header";
 
 const RecomendationEngine = () => {
+  const title = "RECOMMENDATION ENGINE";
   return (
     <div>
-      <Navbar />
+      <Navbar title={title} />
       <Header />
     </div>
   );
