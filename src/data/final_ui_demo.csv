@@ -1,0 +1,11 @@
+Date,TransactionID,TransactionAmt,suspicious
+02/06/2020,3007640.0,0.484,Suspicious Activity Detected for this transaction visa
+02/11/2020,3028932.0,0.424,Suspicious Activity Detected for this transaction visa
+02/15/2020,3043129.0,31.191,Suspicious Activity Detected for this transaction visa
+04/04/2020,3221263.0,34.105,Suspicious Activity Detected for this transaction visa
+05/06/2020,3326941.0,31.418,Suspicious Activity Detected for this transaction visa
+05/08/2020,3331989.0,41.569,Suspicious Activity Detected for this transaction visa
+06/08/2020,3427921.0,140.42,Suspicious Activity Detected for this transaction mastercard
+07/14/2020,3529730.0,0.588,Suspicious Activity Detected for this transaction mastercard
+07/31/2020,3577410.0,25.0,Suspicious Activity Detected for this transaction visa
+07/31/2020,3577451.0,200.0,Suspicious Activity Detected for this transaction american express
