@@ -1,0 +1,6 @@
+.elements {
+    margin-left: 30px;
+    display: grid;
+    grid-template-columns: 250px 250px 200px;
+    gap: 20px;
+}
