@@ -42,8 +42,9 @@ const FraudLinegraph = () => {
         yAxis: {
             label: {
                 formatter: (v) => `${v / 1000} K`
-            }
-        }
+            },
+        },
+        color: ['#17202A', '#808080'],
     };
 
     return <Line {...config} />;
