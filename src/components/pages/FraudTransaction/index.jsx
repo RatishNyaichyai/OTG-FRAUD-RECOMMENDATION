@@ -6,7 +6,8 @@ import LocationDropdownMenu from "../../LocationDropdownMenu";
 import SearchBar from "../../SearchBar";
 import "../../styles/Index.css";
 import FraudTable from "../../FraudTable";
-import FraudLinegraph from "../../FraudLinegraph";
+import Fraudgraph from "../../Fraudgraph";
+import RecommendationTable from "../../RecommendationTable";
 
 const Location = [
   { value: "ALL", label: "ALL" },
@@ -37,7 +38,7 @@ const FraudTransaction = () => {
     <div>
       <Navbar title={title} />
       <Header />
-      <FraudLinegraph />
+      <Fraudgraph />
       <div>
         <h2
           style={{
@@ -57,6 +58,7 @@ const FraudTransaction = () => {
           />
         </div>
         <FraudTable />
+        {/* <RecommendationTable /> */}
       </div>
     </div>
   );
