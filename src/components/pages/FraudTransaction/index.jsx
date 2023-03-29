@@ -1,35 +1,61 @@
 import React from "react";
 import Navbar from "../../Navbar";
 import Header from "../../Header";
-import FraudTable from "./FraudTable";
-import { useEffect, useState } from "react";
-import { parseCsv } from "./CsvParser";
-import csvData from "../../../data/demo.csv";
+import CalanderDropdownMenu from "../../CalanderDropdownMenu";
+import LocationDropdownMenu from "../../LocationDropdownMenu";
+import SearchBar from "../../SearchBar";
+import "../../styles/Index.css";
+import FraudTable from "../../FraudTable";
+
+const Location = [
+  { value: "ALL", label: "ALL" },
+  { value: "SCC", label: "SCC" },
+  { value: "BUR", label: "BUR" },
+  { value: "SFO", label: "SFO" },
+  { value: "DAB", label: "DAB" },
+];
+
+const Periodicity = [
+  { value: "Daily", label: "Daily" },
+  { value: "Monthly", label: "Monthly" },
+];
+
+const onSelection = (selectedOption) => {
+  console.log(`Selected option: ${selectedOption.label}`);
+  // Perform action based on selected option here
+};
+
+const onSearch = (searchValue) => {
+  console.log(`Search value: ${searchValue}`);
+  // Make API call or perform search logic here
+};
 
 const FraudTransaction = () => {
-  const [jsonData, setJsonData] = useState(null);
-
-  useEffect(() => {
-    const fetchData = async () => {
-      const parsedData = await parseCsv(csvData);
-      setJsonData(parsedData);
-    };
-    fetchData();
-  }, []);
-
-  if (!jsonData) {
-    return <div>Loading data...</div>;
-  }
-
   const title = "FRAUD TRANSACTION";
-
   return (
     <div>
       <Navbar title={title} />
       <Header />
-      <div>
-        <h2>Suspicious Fraud Transactions Detail </h2>
-        <FraudTable data={jsonData} />
+      
+      <div className="fraud-transaction">
+        <h2
+          style={{
+            fontSize: "18px",
+            fontWeight: "500",
+            margin: "30px",
+          }}
+        >
+          Suspicious Fraud Transaction Details
+        </h2>
+        <div className="elements">
+          <SearchBar onSearch={onSearch} />
+          <LocationDropdownMenu options={Location} onSelection={onSelection} />
+          <CalanderDropdownMenu
+            options={Periodicity}
+            onSelection={onSelection}
+          />
+        </div>
+        <FraudTable />
       </div>
     </div>
   );
