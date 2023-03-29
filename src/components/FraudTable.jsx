@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Table } from "antd";
-import csvData from "../data/data.csv";
+import csvData from "../data/final_ui_demo_df.csv";
+import Papa from "papaparse";
 
 const FraudTable = () => {
   const [data, setData] = useState([]);
@@ -30,15 +31,7 @@ const FraudTable = () => {
     async function fetchData() {
       const response = await fetch(csvData);
       const text = await response.text();
-      const rows = text.split("\n");
-      const headers = rows[0].split(",").map((header) => header.trim());
-      const data = rows.slice(1).map((row) => {
-        const values = row.split(",").map((value) => value.trim());
-        return headers.reduce((object, header, index) => {
-          object[header] = values[index];
-          return object;
-        }, {});
-      });
+      const { data } = Papa.parse(text, { header: true });
       const dataTypeArray = data.map((row) => ({
         Date: row["Date"],
         TransactionID: row["TransactionID"],
