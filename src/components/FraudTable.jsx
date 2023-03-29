@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { Table } from "antd";
 import csvData from "../data/data.csv";
-const RecommendationEngine = () => {
+
+const FraudTable = () => {
   const [data, setData] = useState([]);
   const columns = [
     {
@@ -56,4 +57,4 @@ const RecommendationEngine = () => {
   );
 };
 
-export default RecommendationEngine;
+export default FraudTable;
