@@ -3,7 +3,7 @@ import { Table } from "antd";
 import csvData from "../data/data.csv";
 import "./styles/FraudTable.css";
 
-const RecommendationEngine = () => {
+const FraudTable = () => {
   const [data, setData] = useState([]);
   const columns = [
     {
@@ -58,4 +58,4 @@ const RecommendationEngine = () => {
   );
 };
 
-export default RecommendationEngine;
+export default FraudTable;
