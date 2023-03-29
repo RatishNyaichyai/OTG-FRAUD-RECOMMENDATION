@@ -2,52 +2,57 @@ import React, { useState, useEffect } from "react";
 // import ReactDOM from "react-dom";
 import { Line } from "@ant-design/plots";
 import csvData from "../data/transaction_lineplot.csv";
+import "./styles/FraudLinegraph.css";
 
 const FraudLinegraph = () => {
-    const [data, setData] = useState([]);
+  const [data, setData] = useState([]);
 
-    useEffect(() => {
-        async function fetchData() {
-            const response = await fetch(csvData);
-            const text = await response.text();
-            const rows = text.split("\n");
-            const headers = rows[0].split(",").map((header) => header.trim());
-            const data = rows.slice(1).map((row) => {
-                const values = row.split(",").map((value) => value.trim());
-                return headers.reduce((object, header, index) => {
-                    object[header] = values[index];
-                    return object;
-                }, {});
-            });
-            const dataTypeArray = data.map((row) => ({
-                Date: row["Date"],
-                TransactionAmt: Number(row['TransactionAmt']),
-                transaction_type: row["transaction_type"],
-            }));
-            setData(dataTypeArray);
-        }
-        fetchData();
-    }, []);
+  useEffect(() => {
+    async function fetchData() {
+      const response = await fetch(csvData);
+      const text = await response.text();
+      const rows = text.split("\n");
+      const headers = rows[0].split(",").map((header) => header.trim());
+      const data = rows.slice(1).map((row) => {
+        const values = row.split(",").map((value) => value.trim());
+        return headers.reduce((object, header, index) => {
+          object[header] = values[index];
+          return object;
+        }, {});
+      });
+      const dataTypeArray = data.map((row) => ({
+        Date: row["Date"],
+        TransactionAmt: Number(row["TransactionAmt"]),
+        transaction_type: row["transaction_type"],
+      }));
+      setData(dataTypeArray);
+    }
+    fetchData();
+  }, []);
 
-    console.log(data)
+  console.log(data);
 
-    const config = {
-        data: data,
-        xField: "Date",
-        yField: "TransactionAmt",
-        seriesField: "transaction_type",
-        xAxis: {
-            type: "time"
-        },
-        yAxis: {
-            label: {
-                formatter: (v) => `${v / 1000} K`
-            },
-        },
-        color: ['#17202A', '#808080'],
-    };
+  const config = {
+    data: data,
+    xField: "Date",
+    yField: "TransactionAmt",
+    seriesField: "transaction_type",
+    xAxis: {
+      type: "time",
+    },
+    yAxis: {
+      label: {
+        formatter: (v) => `${v / 1000} K`,
+      },
+    },
+    color: ["#17202A", "#808080"],
+  };
 
-    return <Line {...config} />;
+  return (
+    <div className="line-graph">
+      <Line {...config} />
+    </div>
+  );
 };
 
 export default FraudLinegraph;

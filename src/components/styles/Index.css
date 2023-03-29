@@ -5,8 +5,9 @@
   gap: 20px;
 }
 
-.fraud-transaction {
-  margin: 15px;
+.fraud-transaction-table,
+.fraud-transaction-line-graph {
+  margin: 20px;
   border: 1px solid;
   border-color: lightgray;
   border-radius: 10px;

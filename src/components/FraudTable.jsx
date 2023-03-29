@@ -53,7 +53,7 @@ const FraudTable = () => {
 
   return (
     <div className="table">
-      <Table columns={columns} dataSource={data} />
+      <Table columns={columns} dataSource={data} />;
     </div>
   );
 };

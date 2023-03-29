@@ -37,8 +37,26 @@ const FraudTransaction = () => {
     <div>
       <Navbar title={title} />
       <Header />
-      <FraudLinegraph />
-      <div className="fraud-transaction">
+      <div className="fraud-transaction-line-graph">
+        <h2
+          style={{
+            fontSize: "18px",
+            fontWeight: "500",
+            margin: "30px",
+          }}
+        >
+          Total Transaction
+        </h2>
+        <div className="elements">
+          <LocationDropdownMenu options={Location} onSelection={onSelection} />
+          <CalanderDropdownMenu
+            options={Periodicity}
+            onSelection={onSelection}
+          />
+        </div>
+        <FraudLinegraph />
+      </div>
+      <div className="fraud-transaction-table">
         <h2
           style={{
             fontSize: "18px",
