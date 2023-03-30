@@ -1,7 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { Table } from "antd";
-import csvData from "../data/data.csv";
-const RecommendationEngine = () => {
+import csvData from "../data/final_ui_demo_df.csv";
+import Papa from "papaparse";
+import "./styles/FraudTable.css";
+
+const FraudTable = () => {
   const [data, setData] = useState([]);
   const columns = [
     {
@@ -10,12 +13,12 @@ const RecommendationEngine = () => {
       key: "Date",
     },
     {
-      title: "TransactionID",
+      title: "Transaction ID",
       dataIndex: "TransactionID",
       key: "TransactionID",
     },
     {
-      title: "TransactionAmt",
+      title: "Transaction Amount ($)",
       dataIndex: "TransactionAmt",
       key: "TransactionAmt",
     },
@@ -29,15 +32,7 @@ const RecommendationEngine = () => {
     async function fetchData() {
       const response = await fetch(csvData);
       const text = await response.text();
-      const rows = text.split("\n");
-      const headers = rows[0].split(",").map((header) => header.trim());
-      const data = rows.slice(1).map((row) => {
-        const values = row.split(",").map((value) => value.trim());
-        return headers.reduce((object, header, index) => {
-          object[header] = values[index];
-          return object;
-        }, {});
-      });
+      const { data } = Papa.parse(text, { header: true });
       const dataTypeArray = data.map((row) => ({
         Date: row["Date"],
         TransactionID: row["TransactionID"],
@@ -50,10 +45,10 @@ const RecommendationEngine = () => {
   }, []);
 
   return (
-    <div>
+    <div className="table">
       <Table columns={columns} dataSource={data} />
     </div>
   );
 };
 
-export default RecommendationEngine;
+export default FraudTable;

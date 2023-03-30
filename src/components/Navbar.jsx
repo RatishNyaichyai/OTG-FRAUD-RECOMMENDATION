@@ -11,21 +11,11 @@ const Navbar = (props) => {
           display: "flex",
         }}
       >
-        <Icon
-          icon="ph:dots-nine-bold"
-          style={{
-            fontSize: "35px",
-          }}
-        />
-        <Icon
-          icon="radix-icons:divider-vertical"
-          style={{
-            fontSize: "35px",
-          }}
-        />
+        <Icon icon="ph:dots-nine-bold" className="icon" />
+        <Icon icon="radix-icons:divider-vertical" className="icon" />
         <span
           style={{
-            margin: "5px 10px 0 0",
+            margin: "12px 10px 0 0",
             color: "darkgray",
             fontSize: "18px",
           }}
@@ -34,7 +24,7 @@ const Navbar = (props) => {
         </span>
         <span
           style={{
-            marginTop: "5px",
+            marginTop: "12px",
             fontSize: "18px",
           }}
         >
@@ -42,12 +32,7 @@ const Navbar = (props) => {
         </span>
       </div>
 
-      <div
-        className="user-container"
-        style={{
-          display: "flex",
-        }}
-      >
+      <div className="user-container">
         <img src={Image} alt="" className="avatar" />
         <span
           style={{

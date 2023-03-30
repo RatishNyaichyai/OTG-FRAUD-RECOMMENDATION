@@ -6,6 +6,7 @@ import LocationDropdownMenu from "../../LocationDropdownMenu";
 import SearchBar from "../../SearchBar";
 import "../../styles/Index.css";
 import FraudTable from "../../FraudTable";
+import Fraudgraph from "../../Fraudgraph";
 
 const Location = [
   { value: "ALL", label: "ALL" },
@@ -36,16 +37,21 @@ const FraudTransaction = () => {
     <div>
       <Navbar title={title} />
       <Header />
-      <div>
-        <h2
-          style={{
-            fontSize: "18px",
-            fontWeight: "500",
-            margin: "30px",
-          }}
-        >
-          Suspicious Fraud Transaction Details
-        </h2>
+
+      <div className="fraud-transaction-chart">
+        <h2>Total Transaction</h2>
+        <div className="elements">
+          <LocationDropdownMenu options={Location} onSelection={onSelection} />
+          <CalanderDropdownMenu
+            options={Periodicity}
+            onSelection={onSelection}
+          />
+        </div>
+        <Fraudgraph />
+      </div>
+
+      <div className="fraud-transaction-table">
+        <h2>Suspicious Fraud Transaction Details</h2>
         <div className="elements">
           <SearchBar onSearch={onSearch} />
           <LocationDropdownMenu options={Location} onSelection={onSelection} />
