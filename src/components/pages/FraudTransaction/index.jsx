@@ -7,7 +7,7 @@ import SearchBar from "../../SearchBar";
 import "../../styles/Index.css";
 import FraudTable from "../../FraudTable";
 import Fraudgraph from "../../Fraudgraph";
-import RecommendationTable from "../../RecommendationTable";
+// import RecommendationTable from "../../RecommendationTable";
 
 const Location = [
   { value: "ALL", label: "ALL" },
