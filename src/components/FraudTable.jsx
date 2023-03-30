@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Table } from "antd";
-import csvData from "../data/data.csv";
+import csvData from "../data/final_ui_demo_df.csv";
 import "./styles/FraudTable.css";
 
 const FraudTable = () => {

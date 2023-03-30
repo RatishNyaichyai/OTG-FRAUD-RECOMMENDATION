@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-// import ReactDOM from "react-dom";
 import { Line } from "@ant-design/plots";
 import csvData from "../data/transaction_lineplot.csv";
 import "./styles/FraudLinegraph.css";
@@ -48,11 +47,7 @@ const FraudLinegraph = () => {
     color: ["#17202A", "#808080"],
   };
 
-  return (
-    <div className="line-graph">
-      <Line {...config} />
-    </div>
-  );
+  return <Line {...config} className="line-graph" />;
 };
 
 export default FraudLinegraph;

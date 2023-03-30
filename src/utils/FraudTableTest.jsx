@@ -1,6 +1,6 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import { parseCsv } from "../../../utils/CsvParser";
+import { parseCsv } from "./CsvParser";
 import csvData from "../../../data/data.csv";
 
 const FraudTableTest = () => {
@@ -20,11 +20,7 @@ const FraudTableTest = () => {
   }
 
   return (
-    <table
-      style={{
-        borderCollapse: "separate",
-      }}
-    >
+    <table>
       <thead>
         <tr>
           <th>Date</th>
