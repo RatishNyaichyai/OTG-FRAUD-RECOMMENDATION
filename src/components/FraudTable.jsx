@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Table } from "antd";
-import csvData from "../data/final_ui_demo_df.csv";
+import csvData from "../data/final_demo_df.csv";
 import Papa from "papaparse";
 import "./styles/FraudTable.css";
 

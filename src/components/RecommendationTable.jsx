@@ -47,7 +47,9 @@ const FraudTableTest = () => {
       render: (recommendations) => (
         <div>
           {strToArray(recommendations).map((recommendation, index) => (
-            <Tag key={index}>{recommendation}</Tag>
+            <Tag key={index} style={{ fontSize: "13px" }}>
+              {recommendation}
+            </Tag>
           ))}
         </div>
       ),
