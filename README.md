@@ -6,7 +6,7 @@ To get started with the project, follow these steps:
 
 - Clone the repository: git clone git@github.com:RatishNyaichyai/OTG-FRAUD-RECOMMENDATION.git
 - Install the dependencies: npm install
-- Add CSV files in src/data folder
+- Add CSV files in src/data folder if not added
 - Start the development server: npm start
 - Open [http://localhost:3000](http://localhost:3000) to view Fraud Transcation page.
 - Open [http://localhost:3000/recommendation](http://localhost:3000/recommendation) to view Recommendation Engine page.
