@@ -1,6 +1,6 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import { parseCsv } from "./CsvParser";
+import { parseCsv } from "../utils/CsvParser";
 import csvData from "../../../data/data.csv";
 
 const FraudTableTest = () => {

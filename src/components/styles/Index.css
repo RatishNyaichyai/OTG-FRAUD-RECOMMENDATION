@@ -6,9 +6,15 @@
 }
 
 .fraud-transaction-table,
-.fraud-transaction-line-graph {
+.fraud-transaction-chart {
   margin: 20px;
   border: 1px solid;
   border-color: lightgray;
   border-radius: 10px;
+}
+
+h2 {
+  font-size: 18px;
+  font-weight: 500;
+  margin: 30px;
 }

@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
-import { Line } from "@ant-design/plots";
+import { Column } from "@ant-design/plots";
 import csvData from "../data/transaction_lineplot.csv";
-import "./styles/FraudLinegraph.css";
+import "./styles/Fraudgraph.css";
 
-const FraudLinegraph = () => {
+const Fraudgraph = () => {
   const [data, setData] = useState([]);
 
   useEffect(() => {
@@ -32,22 +32,15 @@ const FraudLinegraph = () => {
   console.log(data);
 
   const config = {
-    data: data,
+    data,
+    isGroup: true,
     xField: "Date",
     yField: "TransactionAmt",
     seriesField: "transaction_type",
-    xAxis: {
-      type: "time",
-    },
-    yAxis: {
-      label: {
-        formatter: (v) => `${v / 1000} K`,
-      },
-    },
-    color: ["#17202A", "#808080"],
+    color: ["#000000", "#f88c24"],
   };
 
-  return <Line {...config} className="line-graph" />;
+  return <Column {...config} className="chart" />;
 };
 
-export default FraudLinegraph;
+export default Fraudgraph;
