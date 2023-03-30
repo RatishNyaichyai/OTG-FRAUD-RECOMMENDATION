@@ -1,54 +1,63 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import { parseCsv } from "../utils/CsvParser";
+import { Tag, Table } from "antd";
+import Papa from "papaparse";
 import csvData from "../data/recommendations_10samples.csv";
-import { Tag } from "antd";
+import "./styles/RecommendationTable.css";
+
+function strToArray(data) {
+  const str = data.replace(/'/g, ""); // remove single quotes
+  const arr = str.substring(1, str.length - 1).split(", ");
+  return arr;
+}
 
 const FraudTableTest = () => {
-  const [jsonData, setJsonData] = useState(null);
+  const [data, setData] = useState([]);
 
   useEffect(() => {
-    const fetchData = async () => {
-      const parsedData = await parseCsv(csvData);
-      setJsonData(parsedData);
-    };
-
+    async function fetchData() {
+      const response = await fetch(csvData);
+      const text = await response.text();
+      const { data } = Papa.parse(text, { header: true });
+      const dataTypeArray = data.map((row) => ({
+        product_id: row["product_id"],
+        product_name: row["product_name"],
+        recommendations: row["recommendations"],
+      }));
+      setData(dataTypeArray);
+    }
     fetchData();
-  }, []);
+  });
 
-  if (!jsonData) {
-    return <div>Loading data...</div>;
-  }
-
-  function strToArray(data) {
-    const str = data;
-    const arr = str.substring(1, str.length - 1).split(",");
-    return arr;
-  }
+  const columns = [
+    {
+      title: "Product Id",
+      dataIndex: "product_id",
+      key: "product_id",
+    },
+    {
+      title: "Product Name",
+      dataIndex: "product_name",
+      key: "product_name",
+    },
+    {
+      title: "Recommendations",
+      dataIndex: "recommendations",
+      key: "recommendations",
+      render: (recommendations) => (
+        <div>
+          {strToArray(recommendations).map((recommendation, index) => (
+            <Tag key={index}>{recommendation}</Tag>
+          ))}
+        </div>
+      ),
+    },
+  ];
 
   return (
-    <>
-      <table>
-        <thead>
-          <tr>
-            <th>product_id</th>
-            <th>product_name</th>
-            <th>recommendations</th>
-          </tr>
-        </thead>
-        <tbody>
-          {jsonData.map((row, index) => (
-            <tr key={index}>
-              <td>{row.product_id}</td>
-              <td>
-                <Tag>{row.product_name}</Tag>
-              </td>
-              <td>{console.log(strToArray(row.recommendations))}</td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
-    </>
+    <div className="table">
+      <Table columns={columns} dataSource={data} />
+    </div>
   );
 };
 

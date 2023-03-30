@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { Table } from "antd";
 import csvData from "../data/final_ui_demo_df.csv";
-import "./styles/FraudTable.css";
 import Papa from "papaparse";
+import "./styles/FraudTable.css";
 
 const FraudTable = () => {
   const [data, setData] = useState([]);
@@ -46,7 +46,7 @@ const FraudTable = () => {
 
   return (
     <div className="table">
-      <Table columns={columns} dataSource={data} />;
+      <Table columns={columns} dataSource={data} />
     </div>
   );
 };

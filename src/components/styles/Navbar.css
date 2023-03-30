@@ -1,7 +1,4 @@
 .nav {
-  /* position: fixed;
-  width: 100%; */
-
   display: flex;
   justify-content: space-between;
 
@@ -9,8 +6,11 @@
 
   background-color: #635858;
   color: white;
-  /* 
-  z-index: 1; */
+}
+
+.icon {
+  font-size: 40px;
+  padding-top: 5px;
 }
 
 .avatar {
@@ -20,8 +20,10 @@
 }
 
 .user-container {
+  display: flex;
   width: 15rem;
   padding: 5px;
   background-color: rgb(29, 29, 29);
   border-radius: 50px;
+  cursor: pointer;
 }

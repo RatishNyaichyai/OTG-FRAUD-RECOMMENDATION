@@ -37,7 +37,7 @@ const Fraudgraph = () => {
     xField: "Date",
     yField: "TransactionAmt",
     seriesField: "transaction_type",
-    color: ["#000000", "#f88c24"],
+    color: ["#f88c24", "#000000"],
   };
 
   return <Column {...config} className="chart" />;

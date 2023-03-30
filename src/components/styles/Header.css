@@ -1,8 +1,4 @@
 .container {
-  /* position: fixed;
-  width: 100%;
-  top: 7%; */
-
   display: flex;
   justify-content: space-between;
 
@@ -12,8 +8,6 @@
 
   border-bottom: 1px solid;
   border-color: lightgray;
-  /* 
-  z-index: 2; */
 }
 
 .header-title {
@@ -21,11 +15,14 @@
   font-weight: 500;
 }
 
-button {
+.export-button {
   color: white;
-  background: orange;
+  background-color: orange;
   border: none;
   border-radius: 8px;
   padding: 10px;
   cursor: pointer;
+}
+.export-button:hover {
+  background-color: darkorange;
 }
