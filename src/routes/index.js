@@ -1,3 +1,4 @@
+import React from 'react';
 import 'antd/dist/reset.css';
 import { Routes, Route } from 'react-router-dom'
 import FraudTransaction from '../components/pages/FraudTransaction'
