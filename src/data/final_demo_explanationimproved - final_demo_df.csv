@@ -1,0 +1,11 @@
+Date,TransactionID,TransactionAmt,suspicious
+2020-02-06,3007640,0.48,"Suspicious Activity Detected for this transaction, payment through: visa where address did not match"
+2020-02-11,3028932,0.42,"Suspicious Activity Detected for this transaction, payment through: visa where id did not match"
+2020-02-15,3043129,31.19,"Suspicious Activity Detected for this transaction, payment through: visa where address did not match "
+2020-04-04,3221263,34.1,"Suspicious Activity Detected for this transaction, payment through: visa where address did not match"
+2020-05-06,3326941,31.42,"Suspicious Activity Detected for this transaction, payment through: visa where id mismatch (id_13 and id_38)"
+2020-05-08,3331989,41.57,"Suspicious Activity Detected for this transaction, payment through: visa where id_38 did not match"
+2020-06-08,3427921,140.42,"Suspicious Activity Detected for this transaction, payment through: mastercard where address did not match"
+2020-07-14,3529730,0.59,"Suspicious Activity Detected for this transaction, payment through: mastercard where address did not match"
+2020-07-31,3577410,25,"Suspicious Activity Detected for this transaction, payment through: visa where id did not match"
+2020-07-31,3577451,200,"Suspicious Activity Detected for this transaction, payment through: american express where id did not match"
