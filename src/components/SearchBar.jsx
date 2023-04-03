@@ -1,6 +1,6 @@
-import React, { useState } from "react";
-import { Icon } from "@iconify/react";
-import "./styles/SearchBar.css";
+import React, { useState } from 'react';
+import { Icon } from '@iconify/react';
+import './styles/SearchBar.css';
 
 const SearchBar = (props) => {
   const [searchValue, setSearchValue] = useState("");
