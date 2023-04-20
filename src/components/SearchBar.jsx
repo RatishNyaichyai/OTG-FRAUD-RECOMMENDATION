@@ -2,21 +2,17 @@ import React, { useState } from 'react';
 import { Icon } from '@iconify/react';
 import './styles/SearchBar.css';
 
-const SearchBar = (props) => {
+const SearchBar = ({ onSearch }) => {
   const [searchValue, setSearchValue] = useState("");
 
-  const onSearchChange = (event) => {
+  const handleSearch = (event) => {
     setSearchValue(event.target.value);
-  };
-
-  const onSearchSubmit = (event) => {
-    event.preventDefault();
-    props.onSearch(searchValue);
+    onSearch(event.target.value);
   };
 
   return (
     <div className="search-bar">
-      <form onSubmit={onSearchSubmit}>
+      <form>
         <div className="search-wrapper">
           <Icon
             className="search-icon"
@@ -28,7 +24,7 @@ const SearchBar = (props) => {
             type="text"
             placeholder="Search..."
             value={searchValue}
-            onChange={onSearchChange}
+            onChange={handleSearch}
           />
         </div>
       </form>
