@@ -1,27 +1,9 @@
 import React from "react";
 import Navbar from "../../Navbar";
 import Header from "../../Header";
-import CalanderDropdownMenu from "../../CalanderDropdownMenu";
-import LocationDropdownMenu from "../../LocationDropdownMenu";
-import SearchBar from "../../SearchBar";
 import "../../styles/Index.css";
 import FraudTable from "../../FraudTable";
 import Fraudgraph from "../../Fraudgraph";
-
-const Periodicity = [
-  { value: "Daily", label: "Daily" },
-  { value: "Monthly", label: "Monthly" },
-];
-
-const onSelection = (selectedOption) => {
-  console.log(`Selected option: ${selectedOption.label}`);
-  // Perform action based on selected option here
-};
-
-const onSearch = (searchValue) => {
-  console.log(`Search value: ${searchValue}`);
-  // Make API call or perform search logic here
-};
 
 const FraudTransaction = () => {
   const title = "FRAUD TRANSACTION";
@@ -37,14 +19,6 @@ const FraudTransaction = () => {
 
       <div className="fraud-transaction-table">
         <h2>Suspicious Fraud Transaction Details</h2>
-        <div className="elements">
-          <SearchBar onSearch={onSearch} />
-          <LocationDropdownMenu options={Location} onSelection={onSelection} />
-          <CalanderDropdownMenu
-            options={Periodicity}
-            onSelection={onSelection}
-          />
-        </div>
         <FraudTable />
       </div>
     </div>
