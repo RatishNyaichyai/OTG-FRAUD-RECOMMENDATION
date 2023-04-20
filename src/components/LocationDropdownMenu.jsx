@@ -1,17 +1,16 @@
 import React, { useState } from "react";
 import "./styles/DropdownMenu.css";
 
-function LocationDropdownMenu({ options, onSelection }) {
+function LocationDropdownMenu({ options, onSelection, selectedLocation }) {
   const [isOpen, setIsOpen] = useState(false);
-  const [selectedOption, setSelectedOption] = useState(options[0]);
 
   const onMenuClick = () => {
     setIsOpen(!isOpen);
   };
 
   const onOptionClick = (option) => {
-    setSelectedOption(option);
     onSelection(option);
+    setIsOpen(false);
   };
 
   return (
@@ -19,7 +18,7 @@ function LocationDropdownMenu({ options, onSelection }) {
       <div className="dropdown-menu__header" onClick={onMenuClick}>
         <span>Location:</span>
         <div className="dropdown-menu__selected-option">
-          {selectedOption.label}
+          {selectedLocation}
         </div>
         <div className="dropdown-menu__arrow">{isOpen ? "▲" : "▼"}</div>
       </div>

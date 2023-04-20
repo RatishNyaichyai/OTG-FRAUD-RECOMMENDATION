@@ -8,14 +8,6 @@ import "../../styles/Index.css";
 import FraudTable from "../../FraudTable";
 import Fraudgraph from "../../Fraudgraph";
 
-const Location = [
-  { value: "ALL", label: "ALL" },
-  { value: "SCC", label: "SCC" },
-  { value: "BUR", label: "BUR" },
-  { value: "SFO", label: "SFO" },
-  { value: "DAB", label: "DAB" },
-];
-
 const Periodicity = [
   { value: "Daily", label: "Daily" },
   { value: "Monthly", label: "Monthly" },
@@ -40,13 +32,6 @@ const FraudTransaction = () => {
 
       <div className="fraud-transaction-chart">
         <h2>Total Transaction</h2>
-        <div className="elements">
-          <LocationDropdownMenu options={Location} onSelection={onSelection} />
-          <CalanderDropdownMenu
-            options={Periodicity}
-            onSelection={onSelection}
-          />
-        </div>
         <Fraudgraph />
       </div>
 
